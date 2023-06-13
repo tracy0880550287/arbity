@@ -13,23 +13,24 @@ ffmpeg-python==0.2.0
 fairscale==0.4.3
 lvis==0.5.3
 suno-bark
-easyocr==1.6.2
-easydict==1.9
-scikit-learn==0.24.2
-pytorch-lightning==1.5.10
-albumentations==0.5.2
-webdataset==0.2.48
-kornia==0.5.0
-sentencepiece==0.1.98
-accelerate==0.18.0
-timm==0.6.13
-git+https://github.com/facebookresearch/segment-anything.git
-wget
-protobuf==3.20
-pytorchvideo==0.1.5
-soundfile
-fvcore
-decord==0.6.0
-ftfy
-regex
-einops
+{
+  "name": "anything-llm",
+  "version": "0.0.1-beta",
+  "description": "Turn anything into a chattable document through a simple UI",
+  "main": "index.js",
+  "author": "Timothy Carambat (Mintplex Labs)",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "lint": "cd server && yarn lint && cd .. && cd frontend && yarn lint",
+    "setup": "cd server && yarn && cd .. && yarn setup:envs && echo \"Please run yarn dev:server and yarn dev:frontend in separate terminal tabs.\"",
+    "setup:envs": "cd server && cp -n .env.example .env.development && cd ../collector && cp -n .env.example .env && cd ..",
+    "dev:server": "cd server && yarn dev",
+    "dev:frontend": "cd frontend && yarn start",
+    "prod:server": "cd server && yarn start",
+    "prod:frontend": "cd frontend && yarn build"
+  },
+  "private": false
+}

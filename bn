@@ -60,10 +60,7 @@
   "eslint.options": {
     "overrideConfigFile": ".eslintrc.js"
   },
-  "eslint.packageManager": "yarn",
-  "files.associations": {
-    "*.json": "jsonc"
-  },
+ 
   "files.exclude": {
     "**/.git": true,
     "**/.svn": true,

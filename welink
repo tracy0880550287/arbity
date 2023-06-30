@@ -94,18 +94,4 @@ class RetrievalAssistant:
             self.conversation_history.append(assistant_response)
             return assistant_response
             
-    def pretty_print_conversation_history(
-            self, 
-            colorize_assistant_replies=True):
-        
-        for entry in self.conversation_history:
-            if entry['role']=='system':
-                pass
-            else:
-                prefix = entry['role']
-                content = entry['content']
-                if colorize_assistant_replies and entry['role'] == 'assistant':
-                    output = colored(f"{prefix}:\n{content}, green")
-                else:
-                    output = colored(f"{prefix}:\n{content}")
-                print(output)
+
